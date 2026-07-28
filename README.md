@@ -18,7 +18,7 @@ All runtime data, logs, CLI query history, and Workbench settings are strictly c
 ## Quick Start
 
 1. Enter the shell:
-   - Either clone the flake locally
+  - Either clone the flake locally
 
    ```bash
    git clone https://github.com/ajdev-gh/sql-nix
@@ -26,7 +26,7 @@ All runtime data, logs, CLI query history, and Workbench settings are strictly c
    nix develop 
    ```
   
-   - Or pull the devShell directly in nix (recommended)
+  - Or pull the devShell directly in nix (recommended)
   
    ```bash
    nix develop github:ajdev-gh/sql-nix
