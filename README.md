@@ -1,4 +1,4 @@
-# nix-workbench
+# sql-nix
 
 A zero-pollution Nix development shell providing a pre-configured MariaDB database server and MySQL Workbench GUI with GTK Adwaita styling.
 
@@ -41,8 +41,9 @@ All runtime data, logs, CLI query history, and Workbench settings are strictly c
    ```bash
    db-stop
    ```
-   > [!NOTE]
-   > The database will also automatically shut down when you exit the shell environment.
+
+> [!NOTE]
+> The database will also automatically shut down when you exit the shell environment.
 
 ## Connecting in MySQL Workbench
 
@@ -54,7 +55,7 @@ When setting up your connection inside Workbench:
 * Password: (Leave blank)
 
 ## Project Structure
-
+```text
 .
 ├── flake.nix
 ├── flake.lock
@@ -63,3 +64,4 @@ When setting up your connection inside Workbench:
     ├── mysql/          # MariaDB data files, socket, and logs
     ├── .mysql/         # Workbench GUI settings and layout state
     └── .mysql_history  # MariaDB CLI command history
+```
