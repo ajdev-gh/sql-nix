@@ -98,6 +98,7 @@
               workbench-launcher
               pkgs.adw-gtk3
               pkgs.adwaita-icon-theme
+              pkgs.gnome-keyring
               db-start
               db-stop
             ];
@@ -105,6 +106,11 @@
             shellHook = ''
               # Auto shutdown on shell exit
               trap '${db-stop}/bin/db-stop' EXIT
+
+              if [ -z "$SSH_AUTH_SOCK" ]; then
+                eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh 2>/dev/null) >/dev/null
+                export SSH_AUTH_SOCK
+              fi
 
               # Project local path definitions
               export MYSQL_HOME="$PWD/.data/mysql"
